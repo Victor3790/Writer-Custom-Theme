@@ -9,9 +9,9 @@
 
 if ( ! defined( 'ABSPATH' ) ) die();
 
-if ( ! defined( 'WRTR_CUST_VERSION' ) ) {
+if ( ! defined( 'WRTR_CUST_THEME_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'WRTR_CUST_VERSION', '1.0.0' );
+	define( 'WRTR_CUST_THEME_VERSION', '1.0.0' );
 }
 
 if ( ! defined( 'WRTR_CUST_THEME_DIR' ) ) {
