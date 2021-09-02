@@ -7,6 +7,8 @@
  * @package Writer_Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) die();
+
 if ( ! function_exists( 'writer_custom_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

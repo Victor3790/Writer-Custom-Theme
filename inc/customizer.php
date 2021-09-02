@@ -10,6 +10,9 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
+if ( ! defined( 'ABSPATH' ) ) die();
+
 function writer_custom_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -56,6 +59,6 @@ function writer_custom_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function writer_custom_customize_preview_js() {
-	wp_enqueue_script( 'writer-custom-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
+	wp_enqueue_script( 'writer-custom-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), WRTR_CUST_VERSION, true );
 }
 add_action( 'customize_preview_init', 'writer_custom_customize_preview_js' );
