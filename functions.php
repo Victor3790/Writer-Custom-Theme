@@ -9,6 +9,10 @@
 
 if ( ! defined( 'ABSPATH' ) ) die();
 
+if ( ! defined( 'WRTR_CUST_THEME_NAME' ) ) {
+	define( 'WRTR_CUST_THEME_NAME', 'Writer_Custom_Theme' );
+}
+
 if ( ! defined( 'WRTR_CUST_THEME_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'WRTR_CUST_THEME_VERSION', '1.0.0' );
@@ -17,6 +21,11 @@ if ( ! defined( 'WRTR_CUST_THEME_VERSION' ) ) {
 if ( ! defined( 'WRTR_CUST_THEME_DIR' ) ) {
 	// Get writer custom theme directory path
 	define( 'WRTR_CUST_THEME_DIR', get_template_directory() );
+}
+
+if ( ! defined( 'WRTR_CUST_THEME_URI' ) ) {
+	// Get writer custom theme uri
+	define( 'WRTR_CUST_THEME_URI', get_template_directory_uri() );
 }
 
 /**
