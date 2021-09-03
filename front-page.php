@@ -30,7 +30,7 @@ get_header();
                         <p class="page-header-ui-text mb-5">Descripción corta del escritor</p>
                                             
                         <a class="btn btn-teal fw-500 me-2" href="#libros">
-                            Conoce su trabajo
+                            Conocé su trabajo
                             <i class="ms-2" data-feather="arrow-right"></i>
                         </a>
                                             
