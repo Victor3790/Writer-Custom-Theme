@@ -34,6 +34,11 @@ if ( ! defined( 'WRTR_CUST_THEME_URI' ) ) {
 require WRTR_CUST_THEME_DIR . '/inc/enqueue.php';
 
 /**
+ * Create 'Libros' post type
+ */
+require WRTR_CUST_THEME_DIR . '/inc/libros_post_type.php';
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 require WRTR_CUST_THEME_DIR . '/inc/setup.php';
