@@ -1,5 +1,5 @@
 <?php
-function wct_register_libro() {
+function wct_register_libros() {
 
 	/**
 	 * Post Type: libros.
@@ -34,20 +34,20 @@ function wct_register_libro() {
 		"show_in_graphql" => false,
 	];
 
-	register_post_type( "libro", $args );
+	register_post_type( "libros", $args );
 
     /**
     * Taxonomy: Categorías.
     */
     
     $labels = [
-        "name" => __( "Categorías", "barcos_barcelona" ),
-        "singular_name" => __( "Categoría", "barcos_barcelona" ),
+        "name" => __( "Categorías", "writer-custom" ),
+        "singular_name" => __( "Categoría", "writer-custom" ),
     ];
     
         
     $args = [
-        "label" => __( "Categorías", "barcos_barcelona" ),
+        "label" => __( "Categorías", "writer-custom" ),
         "labels" => $labels,
         "public" => true,
         "publicly_queryable" => true,
@@ -56,16 +56,16 @@ function wct_register_libro() {
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "query_var" => true,
-        "rewrite" => [ 'slug' => 'categorias', 'with_front' => true, ],
+        "rewrite" => [ 'slug' => 'categorias_libros', 'with_front' => true, ],
         "show_admin_column" => false,
         "show_in_rest" => true,
-        "rest_base" => "categorias",
+        "rest_base" => "categorias_libros",
         "rest_controller_class" => "WP_REST_Terms_Controller",
         "show_in_quick_edit" => false,
         "show_in_graphql" => false,
     ];
-    register_taxonomy( "categorias", [ "libro" ], $args );
+    register_taxonomy( "categorias_libros", [ "libros" ], $args );
     
 }
 
-add_action( 'init', 'wct_register_libro' );
+add_action( 'init', 'wct_register_libros' );

@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/smartuds/public_html/writer/wp-content/themes/Writer-Custom-Theme
-    - /bin/cp front-page.php $DEPLOYPATH
