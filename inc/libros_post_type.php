@@ -6,7 +6,7 @@ function wct_register_libro() {
 	 */
 
 	$labels = [
-		"name" => __( "libros", "writer-custom" ),
+		"name" => __( "Libros", "writer-custom" ),
 		"singular_name" => __( "libro", "writer-custom" ),
 	];
 
