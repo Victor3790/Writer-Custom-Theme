@@ -18,14 +18,11 @@ if( ! function_exists( 'get_field' ) ) {
 
 $imgs = array();
 
-$imgs['pic_1']['id'] = get_field( 'foto_1' );
-$imgs['pic_2']['id'] = get_field( 'foto_2' );
-$imgs['pic_3']['id'] = get_field( 'foto_3' );
-$imgs['pic_4']['id'] = get_field( 'foto_4' );
-$imgs['pic_5']['id'] = get_field( 'foto_5' );
-$imgs['pic_6']['id'] = get_field( 'foto_6' );
+for ($i=1; $i <= 6; $i++) { 
 
-foreach ( $imgs as &$img ) {
+    $img = array();
+
+    $img['id'] = get_field( 'foto_' . $i );
 
     if( ! $img['id'] ) {
 
@@ -41,23 +38,24 @@ foreach ( $imgs as &$img ) {
 
     }
 
+    //$imgs['pic_' . $i] = $img;
+
+    array_push( $imgs, $img );
+
 }
 
 get_header();
-?>
-		<?php
-		if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+if ( have_posts() ) :
 
-				get_template_part( 'template-parts/content', 'bio', array( 'imgs' => $imgs ) );
+	/* Start the Loop */
+	while ( have_posts() ) :
+		the_post();
 
-			endwhile;
+		get_template_part( 'template-parts/content', 'bio', array( 'imgs' => $imgs ) );
 
-		endif;
-		?>
+	endwhile;
 
-<?php
+endif;
+
 get_footer();

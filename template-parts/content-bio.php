@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying the writers biography
+ * Template part for displaying the writer's biography
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -15,58 +15,35 @@
         </div>
         <hr class="mb-4">
         <div class="row gx-5">
-            <div class="col-md-8">
+            <div class="col-md-8"><!-- pictures section -->
                 <div class="row gx-5">
-                    <div class="col-md-4">
-                        <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $imgs['pic_1']['url']; ?>">
-                            <img 
-                                class="card-img-top" 
-                                src="<?php echo $imgs['pic_1']['url']; ?>" 
-                                alt="<?php echo $imgs['pic_1']['alt']; ?>"
-                            >                    
-                        </a>
-                        <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $imgs['pic_2']['url']; ?>">
-                            <img 
-                                class="card-img-top" 
-                                src="<?php echo $imgs['pic_2']['url']; ?>" 
-                                alt="<?php echo $imgs['pic_2']['alt']; ?>"
-                            >                    
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                    <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $imgs['pic_3']['url']; ?>">
-                            <img 
-                                class="card-img-top" 
-                                src="<?php echo $imgs['pic_3']['url']; ?>" 
-                                alt="<?php echo $imgs['pic_3']['alt']; ?>"
-                            >                    
-                        </a>
-                        <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $imgs['pic_4']['url']; ?>">
-                            <img 
-                                class="card-img-top" 
-                                src="<?php echo $imgs['pic_4']['url']; ?>" 
-                                alt="<?php echo $imgs['pic_4']['alt']; ?>"
-                            >                    
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                    <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $imgs['pic_5']['url']; ?>">
-                            <img 
-                                class="card-img-top" 
-                                src="<?php echo $imgs['pic_5']['url']; ?>" 
-                                alt="<?php echo $imgs['pic_5']['alt']; ?>"
-                            >                    
-                        </a>
-                        <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $imgs['pic_6']['url']; ?>">
-                            <img 
-                                class="card-img-top" 
-                                src="<?php echo $imgs['pic_6']['url']; ?>" 
-                                alt="<?php echo $imgs['pic_6']['alt']; ?>"
-                            >                    
-                        </a>
-                    </div>
+
+                    <?php foreach ( $args['imgs'] as $key => $value ) : ?>
+
+                        <?php if( $key%2 == 0 ) : ?>
+
+                            <div class="col-md-4">
+
+                        <?php endif; ?>
+
+                            <a class="card card-portfolio mb-5" target="_blank" href="<?php echo $value['url']; ?>">
+                                <img 
+                                    class="card-img-top" 
+                                    src="<?php echo $value['url']; ?>" 
+                                    alt="<?php echo $value['alt']; ?>"
+                                >                    
+                            </a>
+
+                        <?php if( $key%2 != 0 ) : ?>
+                            
+                            </div>
+
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
+
                 </div>
-            </div>
+            </div><!--  pictures section  -->
             <div class="col-md-4">                        
                 <?php the_content(); ?>
             </div>
