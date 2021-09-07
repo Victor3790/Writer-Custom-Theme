@@ -1,10 +1,10 @@
 
 <div class="col-lg-4 mb-5">
-    <a class="card lift h-100" href="#!">
-        <img class="card-img-top" src="assets/img/contenido/say-no.jpeg" alt="...">
+    <a class="card lift h-100" href="<?php esc_url( the_permalink() ); ?>">
+        <img class="card-img-top" src="<?php esc_url( the_post_thumbnail_url() ); ?>">
         <div class="card-body">
-            <h4 class="card-title mb-2">El derecho a decir no</h4>
-            <p class="card-text">Tenemos la capacidad de indignarnos cuando alguien viola nuestros derechos...</p>
+            <h4 class="card-title mb-2"><?php the_title(); ?></h4>
+            <p class="card-text"><?php the_excerpt(); ?></p>
         </div>
         <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
             <div class="small text-primary">Leer artículo</div>

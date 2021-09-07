@@ -1,5 +1,5 @@
 <div><!-- Blog post start -->
-    <a class="card card-articulos-index lift h-100" href="<?php esc_url( the_permalink() ) ?>">
+    <a class="card card-articulos-index lift h-100" href="<?php esc_url( the_permalink() ); ?>">
         <img class="card-img-top" src="<?php esc_url( the_post_thumbnail_url() ); ?>">
         <div class="card-body">
             <h4 class="card-title mb-2"><?php the_title(); ?></h4>

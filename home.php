@@ -25,7 +25,7 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 
-					get_template_part( 'template-parts/card-blog-post' );
+					get_template_part( 'template-parts/card', 'blog' );
 
 				endwhile;
 
@@ -36,22 +36,8 @@ get_header();
 			endif;
 		?>
 		</div>
-		
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-blog justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span></a>
-            	</li>
-                <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-                <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                <li class="page-item"><a class="page-link" href="#!">3</a></li>
-            	<li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                <li class="page-item"><a class="page-link" href="#!">12</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span></a>
-                </li>
-            </ul>
-        </nav>
+
+        <?php get_template_part( 'template-parts/pagination' ); ?>
                             
     </div>
 </section>
