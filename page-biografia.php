@@ -5,9 +5,9 @@
  * @package Writer_Custom
  */
 
-// Get the images together with alt info.
-
 if ( ! defined( 'ABSPATH' ) ) die();
+
+// Get the images together with alt info.
 
 if( ! function_exists( 'get_field' ) ) {
 
@@ -38,7 +38,6 @@ for ($i=1; $i <= 6; $i++) {
 
     }
 
-    //$imgs['pic_' . $i] = $img;
 
     array_push( $imgs, $img );
 

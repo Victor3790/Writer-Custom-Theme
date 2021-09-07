@@ -46,8 +46,8 @@ get_header();
 
         $terms = get_terms( array( 'taxonomy' => 'categorias_libros', 'hide_empty' => false ) );
 
-        if( ! is_wp_error( $terms ) ) {
-            foreach( $terms as $term ) {
+        if( ! is_wp_error( $terms ) ) :
+            foreach( $terms as $term ) :
 
                 $args = array(
                     'post_type' => 'libros',
@@ -63,45 +63,19 @@ get_header();
 
                 $books_query = new WP_Query( $args );
 
-                if( $books_query->have_posts() ) { 
-    ?>
+                if( $books_query->have_posts() ) : 
 
-                    <section class="bg-white py-1" id="libros">
-                        <div class="container px-5-r py-4 pt-7">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="text-left"><h1>Libros - <?php echo $term->name; ?></h1></div>
-                                    <div class="pb-2 text-end"><a href="#">Ver todos</a></div>
-                                </div>
-                            </div>
-                            <div class="row pt-1">
-                                <div class="owl-carousel owl-carousel1" style="padding-right:0px;">
+                    get_template_part( 
+                        'template-parts/home', 
+                        'books', 
+                        array( 'term' => $term, 'books_query' => $books_query ) 
+                    );
 
-                                    <?php while( $books_query->have_posts() ) : $books_query->the_post(); ?>
-
-                                        <div>
-                                            <a 
-                                                class="card no-boder-radius card-portfolio h-100" 
-                                                href="<?php echo esc_url( the_permalink() ); ?>">
-                                                <img 
-                                                    class="no-boder-radius card-img-top" 
-                                                    src="<?php echo esc_url( the_post_thumbnail_url() ); ?>">               
-                                            </a>
-                                        </div>
-
-                                    <?php endwhile; ?>
-
-                                </div><!-- .owl-carousel -->
-                            </div><!-- .row -->
-                        </div><!-- .container -->
-                    </section>
-
-    <?php 
-                }//end if
+                endif;
     
-            }//end foreach
+            endforeach;
 
-        }// end if
+        endif;
     
     ?>
 
