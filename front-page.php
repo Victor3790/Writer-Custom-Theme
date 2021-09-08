@@ -79,44 +79,29 @@ get_header();
     
     ?>
 
+    <div></div>
+    
     <?php 
         /*
-        ** Regular Wordpress loop to get posts.
+        ** Wordpress loop to get posts.
         */
+
+        $args = array(
+            'posts_per_page' => 8
+        );
+
+        $posts_query = new WP_Query( $args );
+
+        if( $posts_query->have_posts() ) : 
+
+            get_template_part( 
+                'template-parts/home', 
+                'posts', 
+                array( 'posts_query' => $posts_query ) 
+            );
+
+        endif;
     ?>
-    <section class="bg-white py-1 pb-10" id="Articulos">
-        <div class="container px-5-r py-4 pt-5">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-left"><h1>Artículos</h1></div>
-                    <div class="pb-2 text-end"><a href="#">Ver todos</a></div>
-                </div>
-            </div>
-            <div class="row pt-1">
-                <div class="owl-carousel owl-carousel3" style="padding-right:0px;">
-
-                    <?php
-                        if ( have_posts() ) :
-
-                            /* Start the Loop */
-                            while ( have_posts() ) :
-                                the_post();
-
-                                get_template_part( 'template-parts/card-post' );
-
-                            endwhile;
-
-                        else :
-
-                            echo 'No hay artículos para mostrar.';
-
-                        endif;
-                    ?>
-
-                </div><!-- .owl-carousel -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </section>
 
 <?php
 get_footer();
