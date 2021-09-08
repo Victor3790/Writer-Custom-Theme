@@ -37,11 +37,11 @@ class Wrtr_Cust_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         } elseif( $depth == 1 ) {
 
-            $output .= '<a class="dropdown-item py-3" href="libros1.php">';
+            $output .= '<a class="dropdown-item py-3" href="' . $item->url . '">';
             $output .= '<div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="book-open"></i></div>';
             $output .= '<div>';
             $output .= '<div class="small text-gray-500">' . $item->title . '</div>';
-            $output .= 'Descripción corta de categoría 1';
+            $output .= $item->post_content;
 
         } else { 
 
