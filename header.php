@@ -9,6 +9,8 @@
  * @package Writer_Custom
  */
 
+require WRTR_CUST_THEME_DIR . '/inc/walker_nav_menu.php';
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -68,10 +70,13 @@
                             </ul>-->
                             <?php
                                 wp_nav_menu( array(
+                                    'menu'              => 'Primary',
                                     'theme_location'    => 'menu-1',
+                                    'walker'            => new Wrtr_Cust_Walker_Nav_Menu(),
+                                    //'items_wrap'        => '',
                                     'container'         => 'ul',
                                     'menu_class'        => 'navbar-nav ms-auto me-lg-5',
-                                    'fallback_cb'       => false
+                                    //'fallback_cb'       => false
                                 ) );
                             ?>
                             <a style="background-color:#876501; border-color:#876501;" class="btn fw-500 ms-lg-4 btn-teal" href="#">
