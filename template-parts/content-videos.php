@@ -7,6 +7,17 @@
  * @package Writer_Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) die();
+
+if( ! function_exists( 'get_field' ) ) {
+
+    echo '<h1>ACF plugin is needed for this page to work correctly.</h1>';
+    return;
+
+}
+
+$video_url = get_field( 'video' );
+
 $terms = get_terms( array( 'taxonomy' => 'categorias_videos', 'hide_empty' => false ) );
 $terms = array_reverse( $terms );
 $current_post_id = get_the_ID();
@@ -27,7 +38,7 @@ if( is_wp_error( $terms ) )
             <div class="col-md-7 col-xl-7 mb-5">
                                 
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/b7zyO6RdxZw?rel=0" title="YouTube video" allowfullscreen></iframe>
+                    <iframe src="<?php echo $video_url; ?>" title="YouTube video" allowfullscreen></iframe>
                 </div>
                                                          
             </div>
@@ -39,12 +50,17 @@ if( is_wp_error( $terms ) )
                 <hr>
                 <h5>Compartir</h5>
                 <div class="icon-list-social">
-                    <a class="icon-list-social-link text-dark" href="#!"><i class="fab fa-instagram"></i></a>
-                    <a class="icon-list-social-link text-dark" href="#!"><i class="fab fa-facebook"></i></a>
-                    <a class="icon-list-social-link text-dark" href="#!"><i class="fab fa-github"></i></a>
-                    <a class="icon-list-social-link text-dark" href="#!"><i class="fab fa-twitter"></i></a>
-                </div>
-                                            
+                    <a class="icon-list-social-link text-dark" 
+                        target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url( the_permalink() ); ?>">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a class="icon-list-social-link text-dark" 
+                        target="_blank"
+                        href="https://twitter.com/intent/tweet?url=<?php esc_url( the_permalink() ); ?>">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>                                           
             </div>
         </div>
     </div>         
@@ -71,43 +87,47 @@ if( is_wp_error( $terms ) )
         </ul>
         <?php foreach( $terms as $key => $term ) : ?>
             <div id="cat_<?php echo $term->slug; ?>">
-                <?php
-                    $args = array(
-                        'post_type' => 'videos',
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'categorias_videos',
-                                'field' => 'slug',
-                                'terms' => $term->slug
-                            )
-                        ),
-                        'post__not_in' => array( $current_post_id ),
-                        'posts_per_page' => 6
-                        );
-                    
-                        $videos_query = new WP_Query( $args );
+                <div class="container pt-2">  
+                    <div class="row gx-3 pt-3 pb-7">
+                        <?php
+                            $args = array(
+                                'post_type' => 'videos',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'categorias_videos',
+                                        'field' => 'slug',
+                                        'terms' => $term->slug
+                                    )
+                                ),
+                                'post__not_in' => array( $current_post_id ),
+                                'posts_per_page' => 6
+                                );
+                            
+                                $videos_query = new WP_Query( $args );
 
-                        if( $videos_query->have_posts() ) : 
+                                if( $videos_query->have_posts() ) : 
 
-                            while( $videos_query->have_posts() ) : $videos_query->the_post();
-                ?>
-                                <div class="col-6 col-xl-4 col-xxl-3 mb-3">
-                                    <a class="card card-portfolio h-100" href="<?php echo esc_url( the_permalink() ); ?>">
-                                        <img class="card-img-bottom card-img-top" src="<?php echo esc_url( the_post_thumbnail_url() ); ?>">
-                                        <div class="card-body">
-                                            <div class="card-title"><p class="mb-0"><?php the_title(); ?></p></div>
-                                            <p class="card-text text-gray-600 d-none d-lg-block small mb-0">
-                                                <?php the_excerpt(); ?>
-                                            </p>
-                                            <p class="card-text text-gray-600  small">23 jun.</p>
+                                    while( $videos_query->have_posts() ) : $videos_query->the_post();
+                        ?>
+                                        <div class="col-6 col-xl-4 col-xxl-3 mb-3">
+                                            <a class="card card-portfolio h-100" href="<?php echo esc_url( the_permalink() ); ?>">
+                                                <img class="card-img-bottom card-img-top" src="<?php echo esc_url( the_post_thumbnail_url() ); ?>">
+                                                <div class="card-body">
+                                                    <div class="card-title"><p class="mb-0"><?php the_title(); ?></p></div>
+                                                    <p class="card-text text-gray-600 d-none d-lg-block small mb-0">
+                                                        <?php echo get_the_excerpt(); ?>
+                                                    </p>
+                                                    <p class="card-text text-gray-600  small">23 jun.</p>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
-                                </div>
-                <?php 
-                            endwhile;
+                        <?php 
+                                    endwhile;
 
-                        endif;
-                ?>
+                                endif;
+                        ?>
+                    </div>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
