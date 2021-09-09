@@ -39,6 +39,11 @@ require WRTR_CUST_THEME_DIR . '/inc/enqueue.php';
 require WRTR_CUST_THEME_DIR . '/inc/libros_post_type.php';
 
 /**
+ * Create 'Videos' post type
+ */
+require WRTR_CUST_THEME_DIR . '/inc/videos_post_type.php';
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 require WRTR_CUST_THEME_DIR . '/inc/setup.php';

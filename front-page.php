@@ -83,6 +83,31 @@ get_header();
     
     <?php 
         /*
+        ** Wordpress loop to get videos.
+        */
+
+        $args = array(
+            'post_type' => 'videos',
+            'posts_per_page' => 8
+        );
+
+        $videos_query = new WP_Query( $args );
+
+        if( $videos_query->have_posts() ) : 
+
+            get_template_part( 
+                'template-parts/home', 
+                'videos', 
+                array( 'videos_query' => $videos_query ) 
+            );
+
+        endif;
+    ?>
+
+    <div></div>
+    
+    <?php 
+        /*
         ** Wordpress loop to get posts.
         */
 

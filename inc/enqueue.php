@@ -92,6 +92,18 @@ function writer_custom_scripts() {
 
 	}
 
+	if( is_singular( 'videos' ) ) {
+
+		wp_enqueue_script( 
+			WRTR_CUST_THEME_NAME . '_videos', 
+			WRTR_CUST_THEME_URI . '/js/videos.js',
+			array( 'jquery', 'jquery-ui-tabs' ),
+			WRTR_CUST_THEME_VERSION, 
+			true
+		);
+
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
