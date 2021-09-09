@@ -48,7 +48,7 @@ function wct_register_videos() {
     */
     
     $labels = [
-        "name" => __( "Categorías", "writer-custom" ),
+        "name" => __( "Categorías videos", "writer-custom" ),
         "singular_name" => __( "Categoría", "writer-custom" ),
     ];
     

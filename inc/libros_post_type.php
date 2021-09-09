@@ -48,7 +48,7 @@ function wct_register_libros() {
     */
     
     $labels = [
-        "name" => __( "Categorías", "writer-custom" ),
+        "name" => __( "Categorías libros", "writer-custom" ),
         "singular_name" => __( "Categoría", "writer-custom" ),
     ];
     
