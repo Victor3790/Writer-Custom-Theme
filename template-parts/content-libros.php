@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-8 col-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                 <div class="align-items-center justify-content-between">
-                    <h1 class="page-header-ui-title mb-3"><?php the_title(); ?></h1>
+                    <h2 class="page-header-ui-title mb-3"><?php the_title(); ?></h2>
 					<?php the_content(); ?>
                 </div>
                 <div class="row gx-5 mt-5">
@@ -33,7 +33,7 @@
                             <div class="icon-stack flex-shrink-0 bg-teal text-white"><i class="fas fa-book"></i></div>
                             <div class="ms-4">
                                 <h6>Número de páginas</h6>
-                                <p class="text-dark-50 small">250 páginas</p>
+                                <p class="text-dark-50 small"><?php echo get_field( 'paginas' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                             <div class="icon-stack flex-shrink-0 bg-teal text-white"><i class="fas fa-globe"></i></div>
                             <div class="ms-4">
                                 <h6>Idioma</h6>
-                                <p class="text-dark-50 small">Español</p>
+                                <p class="text-dark-50 small"><?php echo get_field( 'idioma' ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <div class="icon-stack flex-shrink-0 bg-teal text-white"><i class="fas fa-store-alt"></i></div>
                             <div class="ms-4">
                                 <h6>Editorial</h6>
-                                <p class="text-dark-50 small">Planeta/Zenith</p>
+                                <p class="text-dark-50 small"><?php echo get_field( 'editorial' ); ?></p>
                             </div>
                         </div>
                     </div>
