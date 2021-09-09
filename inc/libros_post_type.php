@@ -1,4 +1,11 @@
 <?php
+/**
+ *  Functions to set up the libros cutom post type 
+ * and its category taxonomy
+*/
+
+if ( ! defined( 'ABSPATH' ) ) die();
+
 function wct_register_libros() {
 
 	/**
