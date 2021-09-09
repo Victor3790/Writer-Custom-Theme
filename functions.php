@@ -44,6 +44,11 @@ require WRTR_CUST_THEME_DIR . '/inc/libros_post_type.php';
 require WRTR_CUST_THEME_DIR . '/inc/videos_post_type.php';
 
 /**
+ * Create 'Podcasts' post type
+ */
+require WRTR_CUST_THEME_DIR . '/inc/podcasts_post_type.php';
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 require WRTR_CUST_THEME_DIR . '/inc/setup.php';
