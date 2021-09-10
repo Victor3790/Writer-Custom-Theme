@@ -24,8 +24,18 @@ get_header();
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 pt-5" data-aos="fade-up">
 
-                        <h1 class="page-header-ui-title">Nombre escritor</h1>
-                        <p class="page-header-ui-text mb-5">Descripción corta del escritor</p>
+                        <h1 class="page-header-ui-title">
+                            <?php 
+								$name = get_theme_mod( 'wrtr_cust_name_handle' ); 
+								echo ( empty( $name ) ) ? 'Nombre escritor' : $name;
+							?>
+                        </h1>
+                        <p class="page-header-ui-text mb-5">
+                            <?php 
+								$name = get_theme_mod( 'wrtr_cust_description_handle' ); 
+								echo ( empty( $name ) ) ? 'Descripción corta del escritor' : $name;
+							?>
+                        </p>
 
                         <a class="btn btn-teal fw-500 me-2" href="#libros">
                             Conoce su trabajo.

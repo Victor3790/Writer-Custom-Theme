@@ -79,6 +79,11 @@ require WRTR_CUST_THEME_DIR . '/inc/template-functions.php';
 require WRTR_CUST_THEME_DIR . '/inc/customizer.php';
 
 /**
+ * Writer custom theme settings.
+ */
+require WRTR_CUST_THEME_DIR . '/inc/writer_theme_customizer.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
