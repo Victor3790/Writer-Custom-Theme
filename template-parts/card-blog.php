@@ -1,4 +1,11 @@
+<?php
+/*
+*   Card for showing blog posts in archive pages    
+*/
 
+if ( ! defined( 'ABSPATH' ) ) die();
+
+?>
 <div class="col-lg-4 mb-5">
     <a class="card lift h-100" href="<?php esc_url( the_permalink() ); ?>">
         <img class="card-img-top" src="<?php esc_url( the_post_thumbnail_url() ); ?>">
