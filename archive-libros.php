@@ -31,12 +31,6 @@ get_header();
 
                     get_template_part( 'template-parts/card', 'libros' );
 
-            ?>
-
-
-
-            <?php
-
                 endwhile;
 
             endif;
