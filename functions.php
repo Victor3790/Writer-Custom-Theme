@@ -49,6 +49,11 @@ require WRTR_CUST_THEME_DIR . '/inc/videos_post_type.php';
 require WRTR_CUST_THEME_DIR . '/inc/podcasts_post_type.php';
 
 /**
+ * Create custom fields for custom post types and about page
+ */
+require WRTR_CUST_THEME_DIR . '/inc/custom_fields.php';
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 require WRTR_CUST_THEME_DIR . '/inc/setup.php';
