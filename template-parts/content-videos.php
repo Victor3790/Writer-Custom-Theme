@@ -46,7 +46,7 @@ if( is_wp_error( $terms ) )
                 <a class="badge badge-marketing bg-primary-soft rounded-pill text-primary mb-3" href="#!">Nuevo</a>
                 <h1><?php the_title(); ?></h1>
                 <?php the_content(); ?>
-                <p class="px-3 text-end small">Walter Riso - 16 jun. 2021</p>
+                <p class="px-3 text-end small">Walter Riso - <?php echo get_field( 'fecha' ); ?></p>
                 <hr>
                 <h5>Compartir</h5>
                 <div class="icon-list-social">
@@ -108,20 +108,9 @@ if( is_wp_error( $terms ) )
                                 if( $videos_query->have_posts() ) : 
 
                                     while( $videos_query->have_posts() ) : $videos_query->the_post();
-                        ?>
-                                        <div class="col-6 col-xl-4 col-xxl-3 mb-3">
-                                            <a class="card card-portfolio h-100" href="<?php echo esc_url( the_permalink() ); ?>">
-                                                <img class="card-img-bottom card-img-top" src="<?php echo esc_url( the_post_thumbnail_url() ); ?>">
-                                                <div class="card-body">
-                                                    <div class="card-title"><p class="mb-0"><?php the_title(); ?></p></div>
-                                                    <p class="card-text text-gray-600 d-none d-lg-block small mb-0">
-                                                        <?php echo get_the_excerpt(); ?>
-                                                    </p>
-                                                    <p class="card-text text-gray-600  small">23 jun.</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                        <?php 
+
+                                        get_template_part( 'template-parts/card', 'videos' );
+
                                     endwhile;
 
                                 endif;

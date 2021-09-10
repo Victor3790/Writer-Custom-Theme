@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) die();
             <p class="card-text text-gray-600 d-none d-lg-block small mb-0">
                 <?php echo get_the_excerpt(); ?>
             </p>
-            <p class="card-text text-gray-600  small">23 jun.</p>
+            <p class="card-text text-gray-600  small"><?php echo get_field( 'fecha' ); ?></p>
         </div>
     </a>
 </div>

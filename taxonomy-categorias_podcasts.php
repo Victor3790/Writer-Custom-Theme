@@ -14,6 +14,13 @@
 
 $tax = $wp_query->get_queried_object();
 
+if( ! function_exists( 'get_field' ) ) {
+
+    echo '<h1>ACF plugin is needed for this page to work correctly.</h1>';
+    return;
+
+}
+
 get_header();
 ?>
 
@@ -47,7 +54,10 @@ get_header();
                             <p class="card-text text-gray-600 d-none d-lg-block small"><?php the_content(); ?></p>
                         </div>
                         <div class="col-auto ps-3">
-                            <p class="card-text text-gray-600 small text-end">26 jun. 2021<br><?php echo get_field( 'duracion' ); ?></p>
+                            <p class="card-text text-gray-600 small text-end">
+                                <?php echo get_field( 'fecha' ); ?><br>
+                                <?php echo get_field( 'duracion' ); ?>
+                            </p>
                         </div>    
                     </div>
                 </div>
