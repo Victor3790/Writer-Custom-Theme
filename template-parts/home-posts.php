@@ -11,7 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) die();
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-left"><h1>Artículos</h1></div>
-                <div class="pb-2 text-end"><a href="#">Ver todos</a></div>
+                <div class="pb-2 text-end">
+                    <a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>">
+                        Ver todos
+                    </a>
+                </div>
             </div>
         </div>
         <div class="row pt-1">
