@@ -46,7 +46,7 @@ if( is_wp_error( $terms ) )
                 <a class="badge badge-marketing bg-primary-soft rounded-pill text-primary mb-3" href="#!">Nuevo</a>
                 <h1><?php the_title(); ?></h1>
                 <?php the_content(); ?>
-                <p class="px-3 text-end small">Walter Riso - <?php echo get_field( 'fecha' ); ?></p>
+                <p class="px-3 text-end small"><?php echo get_field( 'autor' ); ?> - <?php echo get_field( 'fecha' ); ?></p>
                 <hr>
                 <h5>Compartir</h5>
                 <div class="icon-list-social">
