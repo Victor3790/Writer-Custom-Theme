@@ -12,15 +12,13 @@
  * @package Writer_Custom
  */
 
-$tax = $wp_query->get_queried_object();
-
 get_header();
 ?>
 
 <section class="bg-white pb-5">
     <div class="container px-5 pt-5">
         <div class="d-flex align-items-center justify-content-between">
-            <h1 class="mb-0">Videos - <?php echo $tax->name; ?></h1>
+            <h1 class="mb-0">Videos</h1>
         </div>
         <hr class="mb-4">
         <div class="row gx-4 pt-1">
