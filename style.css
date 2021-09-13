@@ -19997,3 +19997,10 @@ section {
     font-size: 0.7rem;
   }
 }
+
+figcaption
+{
+  color: #a7aeb8 !important;
+  text-align: center !important;
+  font-size: 0.875rem !important;
+}
