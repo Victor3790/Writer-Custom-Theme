@@ -6,6 +6,7 @@
  *
  * @package Writer_Custom
  */
+if ( ! defined( 'ABSPATH' ) ) die();
 
 ?>
 

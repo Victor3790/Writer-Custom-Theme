@@ -1,4 +1,7 @@
 <?php 
+/*
+* Pagination
+*/
     if ( ! defined( 'ABSPATH' ) ) die();
     
     $items = paginate_links(array( 'type' => 'array', 'prev_text' => '&laquo;', 'next_text' => '&raquo;' )); 

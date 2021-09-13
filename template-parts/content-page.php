@@ -7,6 +7,7 @@
  * @package Writer_Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) die();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

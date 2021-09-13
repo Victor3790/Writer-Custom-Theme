@@ -7,6 +7,7 @@
  * @package Writer_Custom
  */
 
+if ( ! defined( 'ABSPATH' ) ) die();
 ?>
 
 <section class="no-results not-found">

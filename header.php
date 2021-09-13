@@ -8,6 +8,7 @@
  *
  * @package Writer_Custom
  */
+if ( ! defined( 'ABSPATH' ) ) die();
 
 require WRTR_CUST_THEME_DIR . '/inc/walker_nav_menu.php';
 

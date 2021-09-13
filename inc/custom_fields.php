@@ -2,7 +2,7 @@
 /*
 *  Add custom fields. (Function generated with ACF)
 */
-
+if ( ! defined( 'ABSPATH' ) ) die();
 
 if( function_exists('acf_add_local_field_group') ):
 

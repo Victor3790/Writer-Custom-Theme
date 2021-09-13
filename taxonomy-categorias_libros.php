@@ -11,6 +11,7 @@
  *
  * @package Writer_Custom
  */
+if ( ! defined( 'ABSPATH' ) ) die();
 
 $tax = $wp_query->get_queried_object();
 
