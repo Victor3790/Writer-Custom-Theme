@@ -39,7 +39,8 @@ $author_id = get_the_author_meta('ID');
 							</a>
                         </div>
                     </div>
-                    <img class="img-fluid mb-2 rounded" src="<?php esc_url( the_post_thumbnail_url() ); ?>" />
+                    <!--<img class="img-fluid mb-2 rounded" src="<?php //esc_url( the_post_thumbnail_url() ); ?>" />-->
+                    <?php the_post_thumbnail('full', ['class'=>'img-fluid mb-2 rounded']); ?>
                     <div class="small text-gray-500 text-center"><?php echo get_the_post_thumbnail_caption(); ?></div>
                     <div class="single-post-text my-5">
 						<?php the_content(); ?>

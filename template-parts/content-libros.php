@@ -19,7 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) die();
         <div class="row gx-5">
             <div align="center" class="col-lg-4 col-md-4 aos-init aos-animate" data-aos="fade-up">
                 <a style="max-width:80%" class="card no-boder-radius card-portfolio mb-5" href="<?php esc_url( the_post_thumbnail_url('large') ); ?>">
-                    <img class="no-boder-radius card-img-top" src="<?php esc_url( the_post_thumbnail_url('large') ); ?>">
+                    <!--<img class="no-boder-radius card-img-top" src="<?php //esc_url( the_post_thumbnail_url('large') ); ?>">-->
+                    <?php the_post_thumbnail('full', ['class'=>'no-boder-radius card-img-top']); ?>
                 </a>
                                     
             </div>

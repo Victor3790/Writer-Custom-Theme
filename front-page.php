@@ -49,6 +49,16 @@ get_header();
         </div>
     </header>
 
+    <section class="bg-white py-1" id="libros">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <?php 
 
         /* 

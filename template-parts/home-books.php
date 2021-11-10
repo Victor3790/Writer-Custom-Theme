@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) die();
     <div class="container px-5-r py-4 pt-7">
         <div class="row">
             <div class="col-lg-12">
-                <div class="text-left"><h1>Libros - <?php echo $args['term']->name; ?></h1></div>
+                <div class="text-left"><h2>Libros - <?php echo $args['term']->name; ?></h2></div>
                 <div class="pb-2 text-end">
                     <a href="<?php echo esc_url( get_term_link( $args['term'] ) ); ?>">
                         Ver todos
