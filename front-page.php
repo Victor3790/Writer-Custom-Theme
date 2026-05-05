@@ -28,13 +28,13 @@ get_header();
                         <h1 class="page-header-ui-title">
                             <?php 
 								$name = get_theme_mod( 'wrtr_cust_name_handle' ); 
-								echo ( empty( $name ) ) ? 'Nombre escritor' : $name;
+								echo ( empty( $name ) ) ? 'Nombre escritor' : esc_html( $name );
 							?>
                         </h1>
                         <p class="page-header-ui-text mb-5">
                             <?php 
 								$name = get_theme_mod( 'wrtr_cust_description_handle' ); 
-								echo ( empty( $name ) ) ? 'Descripción corta del escritor' : $name;
+								echo ( empty( $name ) ) ? 'Descripción corta del escritor' : esc_html( $name );
 							?>
                         </p>
 
