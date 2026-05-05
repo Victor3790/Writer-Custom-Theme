@@ -16,8 +16,6 @@ if( ! function_exists( 'get_field' ) ) {
 
 }
 
-$video_url = get_field( 'video' );
-
 $terms = get_terms( array( 'taxonomy' => 'categorias_videos', 'hide_empty' => false ) );
 $terms = array_reverse( $terms );
 $current_post_id = get_the_ID();
@@ -38,7 +36,7 @@ if( is_wp_error( $terms ) )
             <div class="col-md-7 col-xl-7 mb-5">
                                 
                 <div class="ratio ratio-16x9">
-                    <iframe src="<?php echo $video_url; ?>" title="YouTube video" allowfullscreen></iframe>
+                    <iframe src="<?php echo esc_url( get_field( 'video' ) ); ?>" title="YouTube video" allowfullscreen></iframe>
                 </div>
                                                          
             </div>
@@ -46,7 +44,7 @@ if( is_wp_error( $terms ) )
                 <a class="badge badge-marketing bg-primary-soft rounded-pill text-primary mb-3" href="#!">Nuevo</a>
                 <h1><?php the_title(); ?></h1>
                 <?php the_content(); ?>
-                <p class="px-3 text-end small"><?php echo get_field( 'autor' ); ?> - <?php echo get_field( 'fecha' ); ?></p>
+                <p class="px-3 text-end small"><?php echo esc_html( get_field( 'autor' ) ); ?> - <?php echo esc_html( get_field( 'fecha' ) ); ?></p>
                 <hr>
                 <h5>Compartir</h5>
                 <div class="icon-list-social">
@@ -79,14 +77,14 @@ if( is_wp_error( $terms ) )
                 <li class="nav-item video_category_nav_item">
                     <a 
                         class="nav-link <?php if( $key == 0 ) echo 'active'; ?>" 
-                        href="#cat_<?php echo $term->slug; ?>">
-                        <?php echo $term->name; ?>
+                        href="#cat_<?php echo esc_html( $term->slug ); ?>">
+                        <?php echo esc_html( $term->name ); ?>
                     </a>
                 </li>
             <?php endforeach; ?>
         </ul>
         <?php foreach( $terms as $key => $term ) : ?>
-            <div id="cat_<?php echo $term->slug; ?>">
+            <div id="cat_<?php echo esc_html( $term->slug ); ?>">
                 <div class="container pt-2">  
                     <div class="row gx-3 pt-3 pb-7">
                         <?php
@@ -113,6 +111,7 @@ if( is_wp_error( $terms ) )
 
                                     endwhile;
 
+                                    wp_reset_postdata(); 
                                 endif;
                         ?>
                     </div>
