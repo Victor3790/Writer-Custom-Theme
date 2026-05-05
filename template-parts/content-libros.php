@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) die();
                             <div class="icon-stack flex-shrink-0 bg-teal text-white"><i class="fas fa-book"></i></div>
                             <div class="ms-4">
                                 <h6>Número de páginas</h6>
-                                <p class="text-dark-50 small"><?php echo get_field( 'paginas' ); ?></p>
+                                <p class="text-dark-50 small"><?php echo esc_html( get_field( 'paginas' ) ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) die();
                             <div class="icon-stack flex-shrink-0 bg-teal text-white"><i class="fas fa-globe"></i></div>
                             <div class="ms-4">
                                 <h6>Idioma</h6>
-                                <p class="text-dark-50 small"><?php echo get_field( 'idioma' ); ?></p>
+                                <p class="text-dark-50 small"><?php echo esc_html(get_field( 'idioma' ) ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) die();
                             <div class="icon-stack flex-shrink-0 bg-teal text-white"><i class="fas fa-store-alt"></i></div>
                             <div class="ms-4">
                                 <h6>Editorial</h6>
-                                <p class="text-dark-50 small"><?php echo get_field( 'editorial' ); ?></p>
+                                <p class="text-dark-50 small"><?php echo esc_html(get_field( 'editorial' ) ); ?></p>
                             </div>
                         </div>
                     </div>
