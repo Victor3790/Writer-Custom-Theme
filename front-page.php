@@ -49,7 +49,7 @@ get_header();
         </div>
     </header>
 
-    <section class="bg-white py-1" id="libros">
+    <section class="bg-white py-1 pt-5 text-center" id="libros">
         <div class="container">
             <div class="row">
                 <div class="col">
