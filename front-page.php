@@ -17,7 +17,7 @@ get_header();
         <div class="overlayh"></div>
         <!-- The HTML5 video element that will create the background video on the header -->
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="<?php echo esc_url( WRTR_CUST_THEME_URI . '/assets/video/BannerWalterRiso4.mp4' ); ?>" type="video/mp4">
+            <source src="<?php echo esc_url( WRTR_CUST_THEME_URI . '/assets/video/home.mp4' ); ?>" type="video/mp4">
         </video>
 
         <div class="page-header-ui-content pt-10">
