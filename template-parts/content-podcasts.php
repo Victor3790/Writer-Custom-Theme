@@ -84,6 +84,7 @@ $current_post_id = get_the_ID();
         <?php 
                     endwhile;
 
+                    wp_reset_postdata();
                 endif;
         ?>
     </div>
