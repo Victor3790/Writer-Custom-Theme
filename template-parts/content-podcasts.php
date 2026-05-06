@@ -22,14 +22,12 @@ $current_post_id = get_the_ID();
             <a href="<?php esc_url( the_permalink() ); ?>">
                 <h6 class="text-dark"><?php the_title(); ?></h6>
             </a>
-            <p class="card-text text-gray-600 d-none d-lg-block small"><?php the_content(); ?></p>
-        </div>
-        <div class="col-auto ps-3">
-            <p class="card-text text-gray-600 small text-end">
+            <p class="card-text text-gray-600 d-none d-lg-block small"><?php the_excerpt(); ?></p>
+            <p class="card-text text-gray-600 small">
                 <?php echo get_field( 'fecha' ); ?><br>
                 <?php echo get_field( 'duracion' ); ?>
             </p>
-        </div>    
+        </div>   
     </div>
 
 <hr class="mb-5" />
