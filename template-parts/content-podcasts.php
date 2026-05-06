@@ -24,8 +24,8 @@ $current_post_id = get_the_ID();
             </a>
             <p class="card-text text-gray-600 d-none d-lg-block small"><?php the_excerpt(); ?></p>
             <p class="card-text text-gray-600 small">
-                <?php echo get_field( 'fecha' ); ?><br>
-                <?php echo get_field( 'duracion' ); ?>
+                Fecha: <?php echo esc_html(get_field( 'fecha' )); ?><br>
+                Duración: <?php echo esc_html( get_field( 'duracion' )); ?>
             </p>
         </div>   
     </div>
