@@ -25,7 +25,7 @@ $current_post_id = get_the_ID();
 <section class="bg-light pb-3">
 <div class="container pt-5">
     <div class="d-flex align-items-center justify-content-between">
-        <h2 class="mb-0">Podcasts</h2>
+        <h2 class="mb-0"><?php the_title(); ?></h2>
     </div>
     <hr class="mb-4">
     
@@ -57,31 +57,7 @@ $current_post_id = get_the_ID();
                 if( $podcasts_query->have_posts() ) : 
 
                     while( $podcasts_query->have_posts() ) : $podcasts_query->the_post();
-        ?>
-
-                        <div class="col-12 mb-2">
-                            <div class="d-flex align-items-center podcast-list">
-                                <div class="icon-stack icon-stack-xl text-white flex-shrink-0">
-                                    <a href="<?php esc_url( the_permalink() ); ?>">
-                                        <img class=" card-img-top" src="<?php esc_url( the_post_thumbnail_url() ); ?>">
-                                    </a>
-                                </div>
-                                <div class="col ms-4">
-                                    <a href="<?php esc_url( the_permalink() ); ?>">
-                                        <h6 class="text-dark"><?php the_title(); ?></h6>
-                                    </a>
-                                    <p class="card-text text-gray-600 d-none d-lg-block small"><?php the_content(); ?></p>
-                                </div>
-                                <div class="col-auto ps-3">
-                                    <p class="card-text text-gray-600 small text-end">
-                                        <?php echo get_field( 'fecha' ); ?><br>
-                                        <?php echo get_field( 'duracion' ); ?>
-                                    </p>
-                                </div>    
-                            </div>
-                        </div>
-
-        <?php 
+                        get_template_part( 'template-parts/card', get_post_type() );
                     endwhile;
 
                 endif;

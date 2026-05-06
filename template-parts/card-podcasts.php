@@ -30,4 +30,4 @@ $current_post_id = get_the_ID();
         </div>   
     </div>
 
-<hr class="mb-5" />
+<hr class="mb-5 mt-3" />
