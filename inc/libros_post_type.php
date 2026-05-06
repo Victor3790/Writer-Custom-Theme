@@ -64,7 +64,7 @@ function wct_register_libros() {
         "show_in_nav_menus" => true,
         "query_var" => true,
         "rewrite" => [ 'slug' => 'categorias_libros', 'with_front' => true, ],
-        "show_admin_column" => false,
+        "show_admin_column" => true,
         "show_in_rest" => true,
         "rest_base" => "categorias_libros",
         "rest_controller_class" => "WP_REST_Terms_Controller",
