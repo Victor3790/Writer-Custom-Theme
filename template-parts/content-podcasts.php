@@ -60,6 +60,7 @@ $current_post_id = get_the_ID();
                         get_template_part( 'template-parts/card', get_post_type() );
                     endwhile;
 
+                    wp_reset_postdata();
                 endif;
         ?>
     </div>

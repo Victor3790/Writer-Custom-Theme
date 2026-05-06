@@ -92,6 +92,7 @@ get_header();
                         array( 'term' => $term, 'books_query' => $books_query ) 
                     );
 
+                    wp_reset_postdata();
                 endif;
     
             endforeach;
@@ -122,6 +123,7 @@ get_header();
                 array( 'videos_query' => $videos_query ) 
             );
 
+            wp_reset_postdata();
         endif;
     ?>
 
@@ -146,6 +148,7 @@ get_header();
                 array( 'posts_query' => $posts_query ) 
             );
 
+            wp_reset_postdata();
         endif;
     ?>
 
