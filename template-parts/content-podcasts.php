@@ -30,8 +30,11 @@ $current_post_id = get_the_ID();
     <hr class="mb-4">
     
     <div class="row gx-5 pt-1">
-        <div class="col-12 mb-5">
+        <div class="col-12 mb-3">
             <iframe src="<?php echo $podcast_url; ?>" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        <div class="col-12 mb-5">
+            <p><?php the_content(); ?></p>
         </div>
     </div>
 </div>
